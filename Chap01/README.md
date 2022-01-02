@@ -71,9 +71,58 @@
 
 
 
+
+
+## 01-3 알아두어야 할 기본 용어
+
+
+
+#### 마무리
+
+1. 3
+
+2. 2
+
+3. 4,  ?
+
+   * console.log('test') 에서 log가 메서드이면서 식별자도 된다고 함.
+
+4. 음...
+
+   1. weAreTheWorld
+   2. createOutput
+   3. createRequest
+   4. initServer
+   5. initMatrix
+
+5. 오류결과
+
+   1. konsole.log('안녕하세요')
+
+       ```
+       VM60:1 Uncaught ReferenceError: konsole is not defined
+           at <anonymous>:1:1
+       ```
+
+   2. +++ 1 ++ 2 + 3
+
+      ```
+      Uncaught SyntaxError: Invalid left-hand side expression in postfix operation
+      ```
+
+   3. console.log)
+
+       ```
+       VM139:1 Uncaught SyntaxError: Unexpected token ')'
+       ```
+
+       
+
+
+
 ## 의견
 
 이전회사에서 IE 8, 9 구버전 호환성 맞추는 일이 꽤 힘든 일이였는데, 현시점 통계를 보니, IE 11도 이제 지원을 안해도 될 것 같은 추세인 것 같다.
 
-그런데, 생각보다 Firefox 사용이 낮이 편이다.
+그런데, 생각보다 Firefox 사용이 낮은 편이다.
 
