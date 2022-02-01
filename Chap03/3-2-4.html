@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  <script>
+    const input = prompt('정수를 입력해주세요', '')
+    const lastRadix = input[input.length - 1];
+
+    // 끝자리를 비교합니다.
+    if ((lastRadix === "0") ||
+      (lastRadix === "2") ||
+      (lastRadix === "4") ||
+      (lastRadix === "6") ||
+      (lastRadix === "8")) {
+      alert(`${input}은 짝수입니다.`)
+    } else {
+      alert(`${input}은 홀수입니다.`)
+    } 
+  </script>
+</body>
+
+</html>

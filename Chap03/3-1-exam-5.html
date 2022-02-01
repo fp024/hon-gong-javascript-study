@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+  <script>
+    function isEven(num) {
+      return num % 2 == 0
+    }
+
+    const a = Number(prompt('숫자를 입력해주세요', ''));
+
+    console.log('a:', a);
+
+    if (isNaN(a)) { // NaN자체는 숫자여서 isNaN으로 숫자가 아닌지 검사해야한다.
+      alert('입력한 숫자는 숫자가 아닙니다.')
+    } else if (isEven(a)) {
+      alert('입력한 숫자는 짝수입니다.')
+    } else {
+      alert('입력한 숫자는 홀수입니다.')
+    }
+  </script>
+</body>
+
+</html>
