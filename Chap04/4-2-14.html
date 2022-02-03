@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+
+<body>
+  <script>
+    let output = ''
+
+    let f = 15
+
+    // 중첩 반복문 작성할 것!
+    for (let i = 1; i <= f; i++) {
+      for (let j = 1; j <= f - i; j++) {
+        output += ' '
+      }
+      for (let j = 1; j < i * 2; j++) {
+        output += '*'
+      }
+      output += '\n'
+    }
+
+    // 출력
+    console.log(output)
+
+  </script>
+</body>
+
+</html>

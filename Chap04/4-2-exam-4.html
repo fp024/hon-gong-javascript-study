@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+
+<body>
+  <script>
+    let output = ''
+
+    const size = 5
+
+    // 중첩 반복문 작성할 것!
+    // '*' 그리는 부분은 좀 끼워 맞추기를 하긴 했는데...ㅠㅠ 사이즈를 변경하더라도 잘 동작한다. ㅎㅎ
+
+    for (let height = 1, blank = size - 1; height <= 2 * size - 1; height++, blank--) { // 높이는 1 ~ 2n -1 까지 반복
+
+      for (let blankIndex = Math.abs(blank); blankIndex > 0; blankIndex--) {
+        output += " "
+      }
+
+      let starIndex = blank > 0 ? (height - 1) * 2 + 1 : (height + (blank * 2) - 1) * 2 + 1
+
+      for (; starIndex > 0; starIndex--) {
+        output += "*"
+      }
+
+      output += "\n"
+
+    }
+
+    // 출력
+    console.log(output)
+  </script>
+</body>
+
+</html>

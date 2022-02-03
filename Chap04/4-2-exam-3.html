@@ -8,9 +8,15 @@
 
 <body>
   <script>
-    const input = confirm('수락하시겠습니까?')
+    
+    let output = 1
 
-    alert(input)
+    for (let i = 1; i <= 100; i++) {
+      output *= i
+    }
+
+    console.log(`1~100까지의 곱: ${output}`)
+
   </script>
 </body>
 

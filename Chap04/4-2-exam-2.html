@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+
+<body>
+  <script>
+    const array = []
+
+
+    for (let i = 0; i < 3; i++) { // i가 const로 설정되어있었다. Uncaught TypeError: Assignment to constant variable.
+      array.push((i + 1) * 3)
+    }
+
+    console.log(array)
+
+  </script>
+</body>
+
+</html>

@@ -8,12 +8,18 @@
 
 <body>
   <script>
-    if (273 < 52) {
-      alert('273은 52보다 작습니다.')
+    let output = 0
+
+    for (let i = 1; i <= 10; i++) {
+      if (i % 2 == 1) {
+        continue
+      }
+
+      output += i;
     }
-    if (273 > 52) {
-      alert('273은 52보다 큽니다.')
-    }
+
+    alert(output)
+
   </script>
 </body>
 
