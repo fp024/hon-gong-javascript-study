@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+
+<body>
+  <script>
+    // 변수를 선언합니다.
+    let numbers = [273, 25, 75, 52, 103, 32, 57, 24, 76]
+
+    // 처리합니다.
+    numbers = numbers.filter((n) => n % 2 === 1)
+      .filter((n) => n <= 100)
+      .filter((n) => n % 5 === 0)
+
+    // 출력합니다.
+    console.log(numbers)
+  </script>
+</body>
+
+</html>

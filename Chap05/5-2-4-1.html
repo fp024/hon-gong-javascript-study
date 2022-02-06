@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+
+<body>
+  <script>
+    let numbers = [273, 52, 103, 32, 57]
+
+    // 콜백 함수를 활용하는 함수: map() ::: 원하는 매개변수만 받기
+    numbers = numbers.map(function (value) {
+      return value * value
+    })
+
+    numbers.forEach((value) => console.log(value))
+    /*
+      74529
+      2704
+      10609
+      1024
+      3249
+    */
+  </script>
+</body>
+
+</html>

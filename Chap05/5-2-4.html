@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+
+<body>
+  <script>
+    let numbers = [273, 52, 103, 32, 57]
+
+    // 콜백 함수를 활용하는 함수: map()
+    numbers = numbers.map(function (value, index, array) {
+      return value * value
+    })
+
+    numbers.forEach(console.log)  // console.log에 value, index, array 인자가 그대로 전달되었다.
+    /*
+      74529 0 Array(5)
+      2704 1 Array(5)
+      10609 2 Array(5)
+      1024 3 Array(5)
+      3249 4 Array(5)
+    */
+  </script>
+</body>
+
+</html>
