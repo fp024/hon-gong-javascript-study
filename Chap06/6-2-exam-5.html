@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+</head>
+
+<body>
+  <script>
+    // 데이터를 생성합니다.
+    const books = [{
+      name: '혼자 공부하는 파이썬',
+      price: 18000,
+      publisher: '한빛미디어'
+    }, {
+      name: 'HTML5 웹 프로그래밍 입문',
+      price: 26000,
+      publisher: '한빛아카데미'
+    }, {
+      name: '머신러닝 딥러닝 실정 개발 입문',
+      price: 30000,
+      publisher: '위키북스'
+    }, {
+      name: '딥러닝을 위한 수학',
+      price: 25000,
+      publisher: '위키북스'
+    }]
+
+    // 이름기준으로 오름차순 정렬합니다.
+    // https://lodash.com/docs/4.17.15#orderBy
+    const output = _.orderBy(books, 'name', 'asc')
+    console.log(JSON.stringify(output, null, 2))
+    console.log('')
+  </script>
+</body>
+
+</html>

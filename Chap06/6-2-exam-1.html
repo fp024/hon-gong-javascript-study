@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+
+<body>
+  <script>
+    // Number 객체에 원() 추가
+    (function () {
+      const num = new Number(52000)
+      num.원 = function () {
+        return this.valueOf() + '원'
+      }
+
+      console.log(num.원())
+    })();  // 이부분에는 세미콜론을 반드시 넣어야했다.
+
+    // Prototype에 직접 원() 추가
+    (function () {
+      const num = 52000
+
+      Number.prototype.원 = function () {
+        return this.valueOf() + '원'
+      }
+
+      console.log(num.원())
+    })()
+  </script>
+</body>
+
+</html>

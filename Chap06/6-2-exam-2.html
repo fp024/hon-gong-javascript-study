@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+
+<body>
+  <script>
+    function printLang(code) {
+      return printLang._lang[code]
+    }
+    printLang._lang = {  // printLang이라는 함수에 속성을 지정해줄 수 있음.
+      ko: '한국어',
+      en: '영어',
+      ja: '일본어',
+      fr: '프랑스어',
+      es: '스페인어'
+    }
+
+    console.log('printLang("ko"):', printLang('ko'))
+    console.log('typeof(printLang): ', typeof (printLang))
+    console.log(printLang)
+
+    console.log('printLang("en"):', printLang('en'))
+  </script>
+</body>
+
+</html>
