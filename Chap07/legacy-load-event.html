@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Load Event</title>
+  <script>
+    // 1
+    document.onload = function () {
+      document.body.innerHTML += '<h1>load 이벤트 발생</h1>'
+    }
+  
+    // 2 
+    document.addEventListener('load', function () {
+      document.body.innerHTML += '<h1>load 이벤트 발생</h1>'
+    })
+
+    // 3 : IE 문서모드 9에서 봤을 때... 이거만 되는 것 같다..
+    function h1func() {
+      document.body.innerHTML += '<h1>load 이벤트 발생</h1>'
+    }
+  </script>
+</head>
+
+<body onload="h1func()">
+  
+</body>
+
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>속성 조작하기</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const rects = document.querySelectorAll('.rect')
+
+      rects.forEach((rect, index) => {
+        const width = (index + 1) * 100
+        const src = `http://placekitten.com/${width}/250`
+        rect.setAttribute('src', src)
+      })
+
+    })
+  </script>
+</head>
+
+<body>
+  <img class="rect"></div>
+  <img class="rect"></div>
+  <img class="rect"></div>
+  <img class="rect"></div>
+</body>
+
+</html>

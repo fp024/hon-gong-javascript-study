@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>querySelector()메서드</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 요소를 읽어들임
+      const header = document.querySelector('h1')
+
+      // 텍스트 스타일을 변경함.
+      header.textContent = 'HEADERS'
+      header.style.color = 'white'
+      header.style.backgroundColor = 'black'
+      header.style.padding = '10px'
+    })
+  </script>
+</head>
+
+<body>
+  <h1></h1>
+</body>
+
+</html>
