@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>체크 박스 활용하기</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let [timer, timerId] = [0, 0]
+      const h1 = document.querySelector('h1')
+      const checkbox = document.querySelector('input')
+      const button = document.querySelector('button')
+
+      checkbox.addEventListener('change', (event) => {
+        if (event.currentTarget.checked) {
+          // 체크 상태
+          timerId = setInterval(() => {
+            timer += 0.1
+            h1.textContent = `${timer.toFixed(1)}초`
+          }, 100)
+        } else {
+          // 체크 해제 상태
+          clearInterval(timerId)
+        }
+      })
+
+      // 타이머 초기화
+      button.addEventListener('click', (event) => {
+        clearInterval(timerId)
+        checkbox.checked = false
+        timer = 0
+        h1.textContent = `${timer}초`
+      })
+
+    })
+  </script>
+</head>
+
+<body>
+  <input type="checkbox">
+  <span>타이머 활성화</span>
+  <h1>0초</h1>
+  <button>타이머 초기화</button>
+</body>
+
+</html>

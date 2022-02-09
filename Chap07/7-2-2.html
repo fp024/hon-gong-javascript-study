@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>키보드 이벤트와 관련된 이벤트 속성</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      const h1 = document.querySelector('h1')
+
+      const print = (event) => {
+        let output = ''
+        output += `alt: ${event.altKey}<br>`
+        output += `ctrl: ${event.ctrlKey}<br>`
+        output += `shift: ${event.shiftKey}<br>`
+
+        console.log('typeof(event.code)', typeof (event.code))
+        console.log('event.code: ', event.code) // 키보드의 특수 키 (계산기 열기 같은) 그런 것은 빈문자열로 받았다.
+        console.log('event.keyCode: ', event.keyCode)
+
+        output += `code: ${typeof (event.code) !== 'undefined' ? event.code : event.keyCode}<br>`
+        h1.innerHTML = output
+      }
+
+      document.addEventListener('keydown', print)
+      document.addEventListener('keyup', print)
+
+    })
+  </script>
+</head>
+
+<body>
+  <h1></h1>
+</body>
+
+</html>
