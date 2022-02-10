@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>예외를 강제로 발생시켜서 사용 유도하기</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  function test(object) {
+    if (object.a !== undefined && object.b !== undefined) {
+      console.log(object.a + object.b)
+    } else {
+      throw new Error('a속성과 b속성을 지정하지 않았습니다.')
+    }
+
+  }
+  test({ a: 1, b: 2 })
+  test({})
+</script>
+
+</html>

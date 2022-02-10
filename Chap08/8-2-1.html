@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>예외 정보 출력하기</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+  try {
+    const array = new Array(99999999999999999999)
+  } catch (exception) {
+    console.log(exception)
+    console.log()
+    console.log(`예외 이름: ${exception.name}`)
+    console.log(`예외 메시지: ${exception.message}`)
+  }
+
+  /*
+    RangeError: Invalid array length
+    예외 이름: RangeError
+    예외 메시지: Invalid array length
+  */
+
+</script>
+
+</html>
