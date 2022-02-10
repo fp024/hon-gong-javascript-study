@@ -200,11 +200,51 @@ document.createElement(문서_객체_이름)
 
 
 
+#### localStorage 객체
+
+* localStorage.getItem(키)
+  * 저장된 값을 추출, 없으면 undefined
+* localStorage.setItem(키, 값)
+  * 값을 저장
+* localStorage.removeItem(키)
+  * 특정 키의 값을 제거
+* localStorage.clear()
+  * 저장된 모든 값을 제거
+
+
+
+
+
 ### 확인문제
 
+1. 이벤트 모델의 이름과 코드 연결
 
+   1. a -> 3
+   2. b -> 2
+   3. c -> 1
+
+2. 3
+
+3. 이벤트 이름과 이벤트가 발생하는 상황 연결
+
+   1. a -> 2
+   2. b -> 1
+   3. c -> 3
+   4. d -> 4
+
+4. 1
+
+5. 2, 3
+
+6. 입력 양식들을 활용해서 만들 수 있는 프로그램
+
+   * 이부분은 생략하자.
+
+   
 
 ## 의견
+
+점점 어려워지고 있다. 😄😄😄
 
 
 
