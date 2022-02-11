@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>길이에 음수가 들어가지 않게 수정하기</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  // 정사각형 클래스
+  class Square {
+    constructor(length) {
+      if (length <= 0) {
+        throw '길이는 0보다 커야합니다.'
+      }
+
+      this.length = length
+    }
+
+    getPerimeter() {
+      return 4 * this.length
+    }
+
+    getArea() {
+      return this.length * this.length
+    }
+  }
+
+  // 클래스 사용하기
+  const square = new Square(-10) // 길이에 음수를 넣어 사용하고 있어 예외가 발생하게 함.
+  console.log(`정사각형의 둘레: ${square.getPerimeter()}`)
+  console.log(`정사각형의 넓이: ${square.getArea()}`)
+
+  /*
+    // 예외 처리를 했어도 ...
+    const square = new Square(10)
+    square.length = -10 // 이런 코드는 막을 수 없음.
+  */
+
+</script>
+
+</html>

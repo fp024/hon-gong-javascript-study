@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>toString() 메서드 오버라이드하기</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  class Parent {
+    test() {
+      console.log("Parent.test() 메서드")
+    }
+  }
+
+  class ChildA extends Parent {
+    test() {
+      super.test()
+      console.log("ChildA.test() 메서드")
+    }
+  }
+
+
+  class ChildB extends Parent {
+    test() {
+      console.log("ChildB.test() 메서드")
+      super.test()
+    }
+  }
+
+  new ChildA().test()
+  new ChildB().test()
+</script>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>private 속성 사용하기(3)</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  // 정사각형 클래스
+  class Square {
+    #length
+
+    constructor(length) {
+      if (length <= 0) {
+        throw '길이는 0보다 커야합니다.'
+      }
+
+      this.#length = length
+    }
+
+    getPerimeter() {
+      return 4 * this.#length
+    }
+
+    getArea() {
+      return this.#length * this.#length
+    }
+  }
+
+  // 클래스 사용하기
+  const square = new Square(10)
+  square.#length = -10 // 클래스 내부의 #length 속성을 사용하여 변경하려할 때는 오류 발생
+                       // Uncaught SyntaxError: Private field '#length' must be declared in an enclosing class
+                       // private 필드는 둘러싸는 클래스에서 선언되야 한다고함.
+  console.log(`정사각형의 둘레: ${square.getPerimeter()}`)
+  console.log(`정사각형의 넓이: ${square.getArea()}`)
+
+</script>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>부모에 있던 내용 가져오기</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  class LifeCycle {
+    call() {
+      this.a()
+      this.b()
+      this.c()
+    }
+
+    a() { console.log('a() 메서드를 호출합니다.') }
+    b() { console.log('b() 메서드를 호출합니다.') }
+    c() { console.log('c() 메서드를 호출합니다.') }
+  }
+
+  class Child extends LifeCycle {
+    a() {
+      super.a()
+      console.log('자식의 a() 메서드입니다.')
+    }
+  }
+
+  //인스턴스를 생성합니다.
+  new Child().call()
+</script>
+
+</html>
