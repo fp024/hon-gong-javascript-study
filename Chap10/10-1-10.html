@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>체크 상태에 따라서 스타일 지정하기</title>
+</head>
+<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+<script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<body>
+  <div id="root">
+
+  </div>
+
+  <script type="text/babel">
+    // 애플리케이션 클래스 생성하기
+    class App extends React.Component {
+      constructor(props) {
+        super(props)
+        this.state = {
+          checked: false
+        }
+        this.handleClick = this.handleClick.bind(this)
+      }
+
+      render() {
+        const textStyle = {
+          color: this.state.checked ? 'blue' : 'red'
+        }
+
+        return <div>
+          <input
+            type="checkbox"
+            onClick={this.handleClick} />
+          <h1 style={textStyle}>글자</h1>
+        </div>
+      }
+
+      handleClick(event) {
+        this.setState({
+          checked: event.target.checked
+        })
+      }
+
+    }
+
+    // 출력하기
+    const container = document.getElementById('root')
+    ReactDOM.render(<App />, container)
+
+  </script>
+</body>
+
+</html>

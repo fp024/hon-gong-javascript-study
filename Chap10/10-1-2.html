@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>표현식 출력하기</title>
+</head>
+<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+<script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<body>
+  <div id="root">
+
+  </div>
+
+  <script type="text/babel">
+    // 상수 선언하기
+    const name = '구름'
+    const imgUrl = 'http://placedog.net/400/200'
+    
+    // 컴포넌트와 컨테이너 생성하기
+    const component = <div>
+      <h1>{name}님 안녕하세요</h1>
+      <img src={imgUrl} />
+    </div>
+
+    const container = document.getElementById('root')
+
+    // 출력하기
+    ReactDOM.render(component, container)
+
+  </script>
+</body>
+
+
+</html>

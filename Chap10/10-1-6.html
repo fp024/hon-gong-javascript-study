@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>이벤트 연결하기</title>
+</head>
+<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+<script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<body>
+  <div id="root">
+
+  </div>
+
+  <script type="text/babel">
+    // 애플리케이션 클래스 생성하기
+    class App extends React.Component {
+      constructor(props) {
+        super(props)
+        this.state = {
+          count: 0
+        }
+
+        this.countUp = this.countUp.bind(this)
+      }
+
+      render() {
+        return <div>
+          <h1>클릭한 횟수: {this.state.count}</h1>
+          <button onClick={this.countUp}>클릭</button>
+        </div>
+      }
+
+      countUp(event) {
+        this.setState({
+          count: this.state.count + 1
+        })
+      }
+    }
+
+    // 출력하기
+    const container = document.getElementById('root')
+    ReactDOM.render(<App />, container)
+
+  </script>
+</body>
+
+</html>
