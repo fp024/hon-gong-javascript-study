@@ -1,35 +1,33 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title></title>
-</head>
+  <!-- 전개 부분 뒤로 이동하기 -->
 
-<!-- 전개 부분 뒤로 이동하기 -->
+  <body>
+    <script>
+      const 구름 = {
+        이름: '구름',
+        나이: 6,
+        종족: '강아지',
+      }
 
-<body>
-  <script>
-    const 구름 = {
-      이름: '구름',
-      나이: 6,
-      종족: '강아지'
-    }
+      const 별 = {
+        이름: '별',
+        나이: 1,
+        예방접종: true,
+        ...구름,
+      }
 
-    const 별 = {
-      이름: '별',
-      나이: 1,
-      예방접종: true,
-      ...구름,
-    }
-
-    console.log(JSON.stringify(구름))
-    console.log(JSON.stringify(별))
-    /*
+      console.log(JSON.stringify(구름))
+      console.log(JSON.stringify(별))
+      /*
       {"이름":"구름","나이":6,"종족":"강아지"}
       {"이름":"구름","나이":6,"예방접종":true,"종족":"강아지"}
     */
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>

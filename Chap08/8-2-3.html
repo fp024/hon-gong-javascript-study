@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>예외를 강제로 발생시키기</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>예외를 강제로 발생시키기</title>
-</head>
-
-<body>
-
-</body>
-<script>
-  function test(object) {
-    console.log(object.a + object.b) // undefined + undefined = NaN 이 되어, 예외 없이 실행은 정상으로 됨
-  }
-  test({})
-</script>
-
+  <body></body>
+  <script>
+    function test(object) {
+      console.log(object.a + object.b) // undefined + undefined = NaN 이 되어, 예외 없이 실행은 정상으로 됨
+    }
+    test({})
+  </script>
 </html>

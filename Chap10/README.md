@@ -195,12 +195,15 @@ render () {
 
 ### 확인 문제
 
-1. 2 : 변경의 역활은 바벨이 아닌가?
-2. 4
+1. ~~2~~  ==> 3
+2. ~~4~~  ==> 2
 3. 1
 4. [10-1-exam-4.html](10-1-exam-4.html)
 5. [10-1-exam-5.html](10-1-exam-5.html)
+   * 난 따로 calc 함수를 만들어 계산했는데, 저자님은 option의 value에 직접 단위 값을 넣어서 해결하셨다.
+   * select의 option에 defaultValue를 줘야지만 초기값이 state에 제대로 인식되었다.
 6. [10-1-exam-6.html](10-1-exam-6.html)
+   * 난 onBlur하고 onForcus 그대로 썼는데, 저자님은 componentDidMount(), componentWillUnmount()를 활용하셨다.
 
 
 
@@ -214,7 +217,7 @@ render () {
 
 ## 의견
 
-
+* react 부분은 역시 어려워서 생활코딩 리엑트 기초를 모두 본다음에 연습문제를 풀었다. 기초를 익히니 좀 이해가 간다.
 
 
 

@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
-  <meta charset="UTF-8">
-  <title>이미지 마우스 오른쪽 버튼 클릭 막기</title>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const imgs = document.querySelectorAll('img')
-      imgs.forEach((img) => {
-        img.addEventListener('contextmenu', (event) => {
-          event.preventDefault() // 컨텍스트 메뉴를 출력하는 기본이벤트 제거
+  <head>
+    <meta charset="UTF-8" />
+    <title>이미지 마우스 오른쪽 버튼 클릭 막기</title>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const imgs = document.querySelectorAll('img')
+        imgs.forEach((img) => {
+          img.addEventListener('contextmenu', (event) => {
+            event.preventDefault() // 컨텍스트 메뉴를 출력하는 기본이벤트 제거
+          })
         })
       })
-    })
-  </script>
-</head>
+    </script>
+  </head>
 
-<body>
-  <img src="http://placekitten.com/300/300" alt="">
-</body>
-
+  <body>
+    <img src="http://placekitten.com/300/300" alt="" />
+  </body>
 </html>

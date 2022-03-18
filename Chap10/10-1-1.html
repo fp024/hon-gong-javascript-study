@@ -1,29 +1,23 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>루트 컴포넌트 출력하기</title>
+  </head>
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
-<head>
-  <meta charset="UTF-8">
-  <title>루트 컴포넌트 출력하기</title>
-</head>
-<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-<script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <body>
+    <div id="root"></div>
 
-<body>
-  <div id="root">
+    <script type="text/babel">
+      // 컴포넌트와 컨테이너 생성하기
+      const component = <h1>리액트 기본</h1>
+      const container = document.getElementById('root')
 
-  </div>
-
-  <script type="text/babel">
-    // 컴포넌트와 컨테이너 생성하기
-    const component = <h1>리액트 기본</h1>
-    const container = document.getElementById('root')
-
-    // 출력하기
-    ReactDOM.render(component, container)
-
-  </script>
-</body>
-
-
+      // 출력하기
+      ReactDOM.render(component, container)
+    </script>
+  </body>
 </html>

@@ -1,33 +1,53 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>연습문제 6</title>
+  </head>
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
-<head>
-  <meta charset="UTF-8">
-  <title>연습문제 6</title>
-</head>
-<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-<script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <body>
+    <div id="root"></div>
 
-<body>
-  <div id="root">
+    <script type="text/babel">
+      // 애플리케이션 클래스 생성하기
+      class App extends React.Component {
+        // React.Component 상속
+        constructor(props) {
+          super(props)
+          this.state = {
+            length: 0,
+          }
+          this.handleOnFocus = this.handleOnFocus.bind(this)
+          this.handleOnBlur = this.handleOnBlur.bind(this)
+          this.timerId = null
+        }
 
-  </div>
+        handleOnFocus(e) {
+          this.timerId = setInterval(() => {
+            this.setState({ length: e.target.value.length })
+          }, 50)
+        }
 
-  <script type="text/babel">
-    // 애플리케이션 클래스 생성하기
-    class App extends React.Component {
-      
-      render() {
-        return <h1>TODO...</h1>
+        handleOnBlur(e) {
+          clearInterval(this.timerId)
+        }
+
+        render() {
+          return (
+            <div>
+              <h1>글자수 : {this.state.length}</h1>
+              <textarea onFocus={this.handleOnFocus} onBlur={this.handleOnBlur}></textarea>
+            </div>
+          )
+        }
       }
-    }
 
-    // 출력하기
-    const container = document.getElementById('root')
-    ReactDOM.render(<App />, container)
-
-  </script>
-</body>
-
+      // 출력하기
+      const container = document.getElementById('root')
+      ReactDOM.render(<App />, container)
+    </script>
+  </body>
 </html>

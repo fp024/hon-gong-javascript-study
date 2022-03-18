@@ -1,36 +1,31 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Rectangle 클래스</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Rectangle 클래스</title>
-</head>
+  <body></body>
+  <script>
+    class Rectangle {
+      constructor(width, height) {
+        this.width = width
+        this.height = height
+      }
 
-<body>
+      // 사각형의 둘레를 구하는 메서드
+      getPerimeter() {
+        return 2 * (this.width + this.height)
+      }
 
-</body>
-<script>
-  class Rectangle {
-    constructor(width, height) {
-      this.width = width
-      this.height = height
+      // 사각형의 넓이를 구하는 메서드
+      getArea() {
+        return this.width * this.height
+      }
     }
 
-    // 사각형의 둘레를 구하는 메서드
-    getPerimeter() {
-      return 2 * (this.width + this.height)
-    }
-
-    // 사각형의 넓이를 구하는 메서드
-    getArea() {
-      return this.width * this.height
-    }
-  }
-
-  const rectangle = new Rectangle(10, 20)
-  console.log(`사각형의 둘레: ${rectangle.getPerimeter()}`)
-  console.log(`사각형의 넓이: ${rectangle.getArea()}`)
-
-</script>
-
+    const rectangle = new Rectangle(10, 20)
+    console.log(`사각형의 둘레: ${rectangle.getPerimeter()}`)
+    console.log(`사각형의 넓이: ${rectangle.getArea()}`)
+  </script>
 </html>

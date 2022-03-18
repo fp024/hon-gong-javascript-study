@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title></title>
-</head>
+  <body>
+    <script>
+      // 타이머 취소하기
+      let id
+      let count = 0
+      id = setInterval(() => {
+        console.log(`1초마다 실행됩니다.(${count}번째)`)
+        count++
+      }, 1 * 1000)
 
-<body>
-  <script>
-    // 타이머 취소하기
-    let id
-    let count = 0
-    id = setInterval(() => {
-      console.log(`1초마다 실행됩니다.(${count}번째)`)
-      count++
-    }, 1 * 1000)
+      setTimeout(() => {
+        console.log(`타이머를 종료합니다.`)
+        clearInterval(id)
+      }, 5 * 1000)
 
-    setTimeout(() => {
-      console.log(`타이머를 종료합니다.`)
-      clearInterval(id)
-    }, 5 * 1000)
-
-    /*
+      /*
       1초마다 실행됩니다.(0번째)
       1초마다 실행됩니다.(1번째)
       1초마다 실행됩니다.(2번째)
@@ -29,7 +28,6 @@
       1초마다 실행됩니다.(4번째)
       타이머를 종료합니다.
     */
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>

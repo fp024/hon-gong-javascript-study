@@ -1,39 +1,36 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>이메일 형식 확인하기</title>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const input = document.querySelector('input')
+        const p = document.querySelector('p')
 
-<head>
-  <meta charset="UTF-8">
-  <title>이메일 형식 확인하기</title>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const input = document.querySelector('input')
-      const p = document.querySelector('p')
-
-      const isEmail = (value) => {
-        // 골뱅이를 갖고 있고 && 골뱅이 뒤에 점이 있다면
-        return (value.indexOf('@') > 1) && (value.split('@')[1].indexOf('.') > 1) 
-        // 도메인 이름이 2글자 이상이여야함. a@aa.com,  a@a.com를 허용하기 위해서는 
-        // (value.split('@')[1].indexOf('.') > 0) 으로 변경하면됨. 
-      }
-
-      input.addEventListener('keyup', (event) => {
-        const value = event.currentTarget.value
-        if (isEmail(value)) {
-          p.style.color = 'green'
-          p.textContent = `이메일 형식입니다: ${value}`
-        } else {
-          p.style.color = 'red'
-          p.textContent = `이메일 형식이 아닙니다.: ${value}`
+        const isEmail = (value) => {
+          // 골뱅이를 갖고 있고 && 골뱅이 뒤에 점이 있다면
+          return value.indexOf('@') > 1 && value.split('@')[1].indexOf('.') > 1
+          // 도메인 이름이 2글자 이상이여야함. a@aa.com,  a@a.com를 허용하기 위해서는
+          // (value.split('@')[1].indexOf('.') > 0) 으로 변경하면됨.
         }
+
+        input.addEventListener('keyup', (event) => {
+          const value = event.currentTarget.value
+          if (isEmail(value)) {
+            p.style.color = 'green'
+            p.textContent = `이메일 형식입니다: ${value}`
+          } else {
+            p.style.color = 'red'
+            p.textContent = `이메일 형식이 아닙니다.: ${value}`
+          }
+        })
       })
+    </script>
+  </head>
 
-    })
-  </script>
-</head>
-
-<body>
-  <input type="text">
-  <p></p>
-</body>
-
+  <body>
+    <input type="text" />
+    <p></p>
+  </body>
 </html>

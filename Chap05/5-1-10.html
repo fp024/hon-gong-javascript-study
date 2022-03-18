@@ -1,38 +1,36 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title></title>
-</head>
+  <body>
+    <script>
+      function min(first, ...rests) {
+        // 변수 선언
+        let output
+        let items
 
-<body>
-  <script>
-    function min(first, ...rests) {
-      // 변수 선언
-      let output
-      let items
-
-      // 매개 변수의 자료형에 따라 조건 분기
-      if (Array.isArray(first)) {
-        output = first[0]
-        items = rests
-      } else if (typeof (first) === 'number') {
-        output = first
-        items = rests
-      }
-
-      for (const item of items) {
-        if (output > item) {
-          output = item
+        // 매개 변수의 자료형에 따라 조건 분기
+        if (Array.isArray(first)) {
+          output = first[0]
+          items = rests
+        } else if (typeof first === 'number') {
+          output = first
+          items = rests
         }
+
+        for (const item of items) {
+          if (output > item) {
+            output = item
+          }
+        }
+
+        return output
       }
 
-      return output
-    }
-
-    console.log(`min(52, 273, 32, 103, 275, 24, 57) = ${min(52, 273, 32, 103, 275, 24, 57)}`)
-  </script>
-</body>
-
+      console.log(`min(52, 273, 32, 103, 275, 24, 57) = ${min(52, 273, 32, 103, 275, 24, 57)}`)
+    </script>
+  </body>
 </html>

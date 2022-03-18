@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title></title>
-</head>
+  <body>
+    <script>
+      // 자료를 생성합니다.
+      const data = [
+        {
+          name: '혼자 공부하는 파이썬',
+          price: 18000,
+          publisher: '한빛미디어',
+        },
+        {
+          name: 'HTML5 웹 프로그래밍 입문',
+          price: 26000,
+          publisher: '한빛아카데미',
+        },
+      ]
 
-<body>
-  <script>
-    // 자료를 생성합니다.
-    const data = [{
-      name: '혼자 공부하는 파이썬',
-      price: 18000,
-      publisher: '한빛미디어'
-    }, {
-      name: 'HTML5 웹 프로그래밍 입문',
-      price: 26000,
-      publisher: '한빛아카데미'
-    }]
-
-    // 자료를 JSON으로 변환
-    console.log(JSON.stringify(data))
-    console.log(JSON.stringify(data, null, 2));
-    // 두번째 인자는
-    //  객체에서 어떤 속성만 선택해서 추출하고 싶을 때 사용하거나 거의 사용하지 않음.
-    //  일반적으로 null(아무 것도 없음)을 넣음.
-  </script>
-</body>
-
+      // 자료를 JSON으로 변환
+      console.log(JSON.stringify(data))
+      console.log(JSON.stringify(data, null, 2))
+      // 두번째 인자는
+      //  객체에서 어떤 속성만 선택해서 추출하고 싶을 때 사용하거나 거의 사용하지 않음.
+      //  일반적으로 null(아무 것도 없음)을 넣음.
+    </script>
+  </body>
 </html>

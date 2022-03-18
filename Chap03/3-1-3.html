@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title></title>
-</head>
+  <body>
+    <script>
+      // 변수를 선언합니다.
+      const date = new Date()
+      const hour = date.getHours()
 
-<body>
-  <script>
-    // 변수를 선언합니다.
-    const date = new Date()
-    const hour = date.getHours()
-
-    // if 조건문
-    if (hour < 12) {
-      alert('오전입니다.')
-    } else {
-      alert('오후입니다.')
-    }
-  </script>
-</body>
-
+      // if 조건문
+      if (hour < 12) {
+        alert('오전입니다.')
+      } else {
+        alert('오후입니다.')
+      }
+    </script>
+  </body>
 </html>

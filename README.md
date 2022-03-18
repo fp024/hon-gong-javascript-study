@@ -54,5 +54,15 @@
 
 ## 기타
 
+### prettier 일괄 실행
+
+```bash
+# 아무 프로젝트에나 실행할 일이 많아서 글로벌로 설치해도 될 것 같다.
+npm i -g prettier  
+
+# 포멧팅 명령어 실행
+prettier --write "./**/*.{html,css,js,json}"
+```
+
 
 

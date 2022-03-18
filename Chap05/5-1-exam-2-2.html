@@ -1,28 +1,25 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title></title>
-</head>
+  <body>
+    <script>
+      const max = function (...items) {
+        let output = items[0]
 
-<body>
-  <script>
-    const max = function (...items) {
-      let output = items[0]
-
-      for (const i of items) {
-        if (output < i) {
-          output = i
+        for (const i of items) {
+          if (output < i) {
+            output = i
+          }
         }
+
+        return output
       }
 
-      return output
-    }
-
-    console.log(max(1, 2, -1, 3, -10, 4))
-
-  </script>
-</body>
-
+      console.log(max(1, 2, -1, 3, -10, 4))
+    </script>
+  </body>
 </html>

@@ -1,56 +1,51 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>리액트를 활용한 현재 시간 출력 프로그램</title>
+  </head>
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
-<head>
-  <meta charset="UTF-8">
-  <title>리액트를 활용한 현재 시간 출력 프로그램</title>
-</head>
-<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-<script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <body>
+    <div id="root"></div>
 
-<body>
-  <div id="root">
+    <script type="text/babel">
+      // 애플리케이션 클래스 생성하기
+      class App extends React.Component {
+        // React.Component 상속
+        constructor(props) {
+          super(props)
+          this.state = {
+            time: new Date(),
+          }
+        }
 
-  </div>
+        render() {
+          return <h1>{this.state.time.toLocaleTimeString()}</h1>
+        }
 
-  <script type="text/babel">
-    // 애플리케이션 클래스 생성하기
-    class App extends React.Component { // React.Component 상속
-      constructor(props) {
-        super(props)
-        this.state = {
-          time: new Date()
+        componentDidMount() {
+          console.log('call componentDidMount')
+          // 컴포넌트가 화면에 출력되었을 때
+          this.timerId = setInterval(() => {
+            this.setState({
+              time: new Date(),
+            })
+          }, 1000)
+        }
+
+        componentWillUnmount() {
+          console.log('call componentWillUnmount')
+          // 컴포넌트가 화면에서 제거될 때
+          clearInterval(this.timeId)
         }
       }
 
-      render() {
-        return <h1>{this.state.time.toLocaleTimeString()}</h1>
-      }
-
-      componentDidMount() {
-        console.log('call componentDidMount')
-        // 컴포넌트가 화면에 출력되었을 때
-        this.timerId = setInterval(() => {
-          this.setState({
-            time: new Date()
-          })
-        }, 1000)
-      }
-
-      componentWillUnmount() {
-        console.log('call componentWillUnmount')
-        // 컴포넌트가 화면에서 제거될 때
-        clearInterval(this.timeId)
-      }
-    }
-
-    // 출력하기
-    const container = document.getElementById('root')
-    ReactDOM.render(<App />, container)
-
-  </script>
-</body>
-
-
+      // 출력하기
+      const container = document.getElementById('root')
+      ReactDOM.render(<App />, container)
+    </script>
+  </body>
 </html>

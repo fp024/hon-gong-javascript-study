@@ -1,30 +1,27 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title></title>
-</head>
-
-<body>
-  <!-- 
+  <body>
+    <!-- 
      선언적 함수와 익명 함수의 조합
   -->
-  <script>
-    // 익명 함수를 생성
-    함수 = function () {
-      console.log('익명 함수입니다.')
-    }
+    <script>
+      // 익명 함수를 생성
+      함수 = function () {
+        console.log('익명 함수입니다.')
+      }
 
-    // 선언적 함수를 생성하고 할당
-    function 함수 () {
-      console.log('선언적 함수입니다.')
-    }
+      // 선언적 함수를 생성하고 할당
+      function 함수() {
+        console.log('선언적 함수입니다.')
+      }
 
-    // 함수 호출
-    함수() // 선언적 함수가 먼저 생성되고, 이후 익명 함수가 생성됨.
-  </script>
-
-</body>
-
+      // 함수 호출
+      함수() // 선언적 함수가 먼저 생성되고, 이후 익명 함수가 생성됨.
+    </script>
+  </body>
 </html>

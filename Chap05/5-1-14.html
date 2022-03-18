@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title></title>
-</head>
-
-<body>
-  <script>
-    // ## 구버전 자바스크립트에서 가변 매개변수 함수 구현
-    //    배열 내부에서 사용할 수 있는 특수한 변수인 arguments를 활용
-    function sample() {
-      console.log(arguments)
-      for (let i = 0; i < arguments.length; i++) {
-        console.log(`${i}번째 요소: ${arguments[i]}`)
+  <body>
+    <script>
+      // ## 구버전 자바스크립트에서 가변 매개변수 함수 구현
+      //    배열 내부에서 사용할 수 있는 특수한 변수인 arguments를 활용
+      function sample() {
+        console.log(arguments)
+        for (let i = 0; i < arguments.length; i++) {
+          console.log(`${i}번째 요소: ${arguments[i]}`)
+        }
       }
-    }
 
-    sample()
-    sample(1)
-    sample(1, 2)
-    sample(1, 2, 3)
-    sample(1, 2, 3, 4)
+      sample()
+      sample(1)
+      sample(1, 2)
+      sample(1, 2, 3)
+      sample(1, 2, 3, 4)
 
-    /*
+      /*
       > Arguments(0) [callee: ƒ, Symbol(Symbol.iterator): ƒ]
       > Arguments(1) [1, callee: ƒ, Symbol(Symbol.iterator): ƒ]
         0번째 요소: 1
@@ -40,7 +39,6 @@
         2번째 요소: 3
         3번째 요소: 4
   */
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>

@@ -1,67 +1,58 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>리액트를 활용한 현재 시간 출력 프로그램</title>
+  </head>
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
-<head>
-  <meta charset="UTF-8">
-  <title>리액트를 활용한 현재 시간 출력 프로그램</title>
-</head>
-<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-<script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <body>
+    <div id="root"></div>
 
-<body>
-  <div id="root">
-
-  </div>
-
-  <script type="text/babel">
-    // 애플리케이션 클래스 생성하기
-    class App extends React.Component { // React.Component 상속
-      constructor(props) {
-        super(props)
-        this.state = {
-          time: 0,
-          checked: false
-        }
-        this.handleClick = this.handleClick.bind(this)
-      }
-
-      render() {
-
-
-        return <div>
-          <input
-            type="checkbox"
-            onClick={this.handleClick} />
-          <span>타이머 활성화</span>
-          <h1>{this.state.time}초</h1>
-        </div>
-      }
-
-      handleClick(event) {
-
-        if (event.target.checked) {
-          this.timerId = setInterval(() => {
-            // TODO: state의 타이머를 조정해줘야하는데.... 어떻게 접근해야할지 모르겠다.
-          }, 1000)
-        } else {
-          clearInterval(this.timerId)
+    <script type="text/babel">
+      // 애플리케이션 클래스 생성하기
+      class App extends React.Component {
+        // React.Component 상속
+        constructor(props) {
+          super(props)
+          this.state = {
+            time: 0,
+            checked: false,
+          }
+          this.handleClick = this.handleClick.bind(this)
         }
 
-        this.setState({
-          checked: event.target.checked,
-          time: t
-        })
+        render() {
+          return (
+            <div>
+              <input type="checkbox" onClick={this.handleClick} />
+              <span>타이머 활성화</span>
+              <h1>{this.state.time}초</h1>
+            </div>
+          )
+        }
+
+        handleClick(event) {
+          console.log('this.state.time:', this.state.time)
+          if (event.target.checked) {
+            this.timerId = setInterval(() => {
+              this.setState({ time: this.state.time + 1 })
+            }, 1000)
+          } else {
+            clearInterval(this.timerId)
+          }
+
+          this.setState({
+            checked: event.target.checked,
+          })
+        }
       }
 
-    }
-
-    // 출력하기
-    const container = document.getElementById('root')
-    ReactDOM.render(<App />, container)
-
-  </script>
-</body>
-
-
+      // 출력하기
+      const container = document.getElementById('root')
+      ReactDOM.render(<App />, container)
+    </script>
+  </body>
 </html>

@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title></title>
-</head>
+  <body>
+    <script>
+      // 변수를 선언합니다.
+      const degree = 90
 
-<body>
-  <script>
-    // 변수를 선언합니다.
-    const degree = 90
-
-    // 출력합니다.
-    // Math.sin(x)에서 x파라미터를 라디안으로 받으므로, 각도 90을 라디안으로 바꿔야한다.
-    function toRadian(degree) {
-      return degree * (Math.PI / 180)
-    }
-    let sin90 = Math.sin(toRadian(90))
-    console.log('sin 90:', sin90)
-  </script>
-</body>
-
+      // 출력합니다.
+      // Math.sin(x)에서 x파라미터를 라디안으로 받으므로, 각도 90을 라디안으로 바꿔야한다.
+      function toRadian(degree) {
+        return degree * (Math.PI / 180)
+      }
+      let sin90 = Math.sin(toRadian(90))
+      console.log('sin 90:', sin90)
+    </script>
+  </body>
 </html>

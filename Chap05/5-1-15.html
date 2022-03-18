@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title></title>
-</head>
+  <body>
+    <script>
+      // ## 구 버전 자바스크립트에서 전개 연산자 구현하기
+      //    apply() 함수 사용
+      function sample(...items) {
+        console.log(items)
+      }
 
-<body>
-  <script>
-    // ## 구 버전 자바스크립트에서 전개 연산자 구현하기
-    //    apply() 함수 사용
-    function sample(...items) {
-      console.log(items)
-    }
-
-    // 전개 연산자 사용여부 비교하기
-    const array = [1, 2, 3, 4]
-    console.log(sample.apply(null, array))
-  </script>
-</body>
-
+      // 전개 연산자 사용여부 비교하기
+      const array = [1, 2, 3, 4]
+      console.log(sample.apply(null, array))
+    </script>
+  </body>
 </html>

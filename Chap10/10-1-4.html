@@ -1,36 +1,33 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>컴포넌트의 속성 사용하기</title>
+  </head>
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
-<head>
-  <meta charset="UTF-8">
-  <title>컴포넌트의 속성 사용하기</title>
-</head>
-<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-<script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <body>
+    <div id="root"></div>
 
-<body>
-  <div id="root">
-
-  </div>
-
-  <script type="text/babel">
-    // 애플리케이션 클래스 생성하기
-    class App extends React.Component { // React.Component 상속
-      render() {
-        return <div>
-          <h1>{this.props.name}님 안녕하세요</h1>
-          <img src={this.props.imgUrl} />
-        </div>
+    <script type="text/babel">
+      // 애플리케이션 클래스 생성하기
+      class App extends React.Component {
+        // React.Component 상속
+        render() {
+          return (
+            <div>
+              <h1>{this.props.name}님 안녕하세요</h1>
+              <img src={this.props.imgUrl} />
+            </div>
+          )
+        }
       }
-    }
 
-    // 출력하기
-    const container = document.getElementById('root')
-    ReactDOM.render(<App name="구름" imgUrl="http://placedog.net/400/200" />, container)
-
-  </script>
-</body>
-
-
+      // 출력하기
+      const container = document.getElementById('root')
+      ReactDOM.render(<App name="구름" imgUrl="http://placedog.net/400/200" />, container)
+    </script>
+  </body>
 </html>

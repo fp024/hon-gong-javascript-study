@@ -1,33 +1,77 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>연습문제 5</title>
+  </head>
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
-<head>
-  <meta charset="UTF-8">
-  <title>연습문제 5</title>
-</head>
-<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-<script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <body>
+    <div id="root"></div>
 
-<body>
-  <div id="root">
+    <script type="text/babel">
+      // 애플리케이션 클래스 생성하기
+      class App extends React.Component {
+        // React.Component 상속
+        constructor(props) {
+          super(props)
+          this.state = {
+            value: 0,
+            unit: 'mm',
+          }
+          this.handleSelect = this.handleSelect.bind(this)
+          this.handleInput = this.handleInput.bind(this)
+        }
 
-  </div>
+        calc(value, convertUnit) {
+          if (value == 0) {
+            return 0
+          }
 
-  <script type="text/babel">
-    // 애플리케이션 클래스 생성하기
-    class App extends React.Component {
-      
-      render() {
-        return <h1>TODO...</h1>
+          if (convertUnit === 'mm') {
+            return value * 10
+          } else if (convertUnit === 'm') {
+            return value * 0.01
+          } else if (convertUnit === 'inch') {
+            return value * 0.393701
+          }
+          throw 'IllegalArgumentException'
+        }
+
+        handleInput(e) {
+          console.log('handleInput: ', this.state.value)
+          this.setState({ value: this.calc(e.target.value, this.state.unit) })
+        }
+
+        handleSelect(e) {
+          console.log('handleSelect: ', this.state.unit)
+          this.setState({
+            unit: e.target.value,
+            value: this.calc(this.state.value, e.target.value),
+          })
+        }
+
+        render() {
+          return (
+            <div>
+              <input onChange={this.handleInput} /> cm = <span>{this.state.value}</span>
+              <select onChange={this.handleSelect}>
+                <option defaultValue value="mm">
+                  mm
+                </option>
+                <option value="m">m</option>
+                <option value="inch">inch</option>
+              </select>
+            </div>
+          )
+        }
       }
-    }
 
-    // 출력하기
-    const container = document.getElementById('root')
-    ReactDOM.render(<App />, container)
-
-  </script>
-</body>
-
+      // 출력하기
+      const container = document.getElementById('root')
+      ReactDOM.render(<App />, container)
+    </script>
+  </body>
 </html>

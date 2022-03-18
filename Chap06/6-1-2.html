@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title></title>
-</head>
+  <body>
+    <!-- 동적으로 객체 속성 추가하기  -->
+    <script>
+      // 객체를 선언합니다.
+      const student = {}
+      student.이름 = '윤인성'
+      student.취미 = '악기'
+      student.장래희망 = '생명공학자'
 
-<body>
-  <!-- 동적으로 객체 속성 추가하기  -->
-  <script>
-    // 객체를 선언합니다.
-    const student = {}
-    student.이름 = '윤인성'
-    student.취미 = '악기'
-    student.장래희망 = '생명공학자'
-
-    // 출력합니다.
-    console.log(JSON.stringify(student, null, 2)) // 2의 의미는 보기쉽게 속성 앞을 2칸 띄어쓰기 해준다.
-  </script>
-</body>
-
+      // 출력합니다.
+      console.log(JSON.stringify(student, null, 2)) // 2의 의미는 보기쉽게 속성 앞을 2칸 띄어쓰기 해준다.
+    </script>
+  </body>
 </html>
