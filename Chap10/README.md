@@ -209,17 +209,55 @@ render () {
 
 ## 10-2 리액트와 데이터
 
+### 여러 개의 컴포넌트 사용하기
 
 
 
+### 부모에서 자식의 state 속성 변경하기
+
+* 부모에서 자식 컴포넌트로 어떤 데이터를 전달할 때는 this.props 사용 이후 화면 내용을 변경할 때도 this.props 사용
+
+* [10-2-2.html](10-2-2.html)
+
+  * 부모에서 타이머를 통해 계속 시간을 1초마다 상태를 바꾸면서 Item의 state를 바꾸는데, 그냥은 화면 출력을 바꿀 수는 없고, `componentDidUpdate(prevProps)` 메서드를 오버라이드 해서 여기서 변경값을 state를 설정해야 바뀔 수 있다.
+
+    ```javascript
+    componentDidUpdate(prevProps) {
+      // 자식 컴포넌트에서 변경을 적용할 때 사용하는 코드
+      if (prevProps.value !== this.props.value) {
+        this.setState({
+          value: this.props.value,
+        })
+      }
+    }
+    ```
+
+    
+
+### 자식에서 부모의 state 속성 변경하기
+
+부모 컴포넌트에서 자신(부모)의 속성을 변경하는 메서드를 자식에게 전달한 뒤, 자식에서 이를 호출하게 만듦
+
+* [10-2-4.html](10-2-4.html)
 
 
+
+### 리액트로 만드는 할 일 목록 애플리케이션
+
+* [10-2-5.html](10-2-5.html)
+
+  * key를 지정하는 것을 경로 로그로 권장하는데, 이 때문에 TodoItem 컴포넌트에 key를 todo.key를 값으로 지정했다. 단순하게 생각해서 기존 dataKey를 key 같이 쓸수 없지 않나라고 생각할 수 있는데, 이것은 컴포넌트의 props로 전달되지 않는다고 함. 그래서 저자님이 dataKey라는 것을 따로 만드신 것 같다.
+
+    * https://ko.reactjs.org/warnings/special-props.html
+
+    * https://ko.reactjs.org/docs/lists-and-keys.html#keys
+
+      
 
 ## 의견
 
-* react 부분은 역시 어려워서 생활코딩 리엑트 기초를 모두 본다음에 연습문제를 풀었다. 기초를 익히니 좀 이해가 간다.
-
-
+* react 부분은 역시 어려워서 생활코딩 리엑트 기초를 모두 본다음에 연습문제를 풀었다. 기초를 익히니 좀 이해가 간다. 😂😂😂
+* 마지막의 TODO 리스트 만드는 것은 무념무상으로 따라치긴 했는데, key 경고가 나오던 부분은 검색해서 고쳐봤다.
 
 
 
